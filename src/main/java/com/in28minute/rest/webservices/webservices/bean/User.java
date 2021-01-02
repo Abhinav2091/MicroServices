@@ -1,5 +1,7 @@
 package com.in28minute.rest.webservices.webservices.bean;
 
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
 import java.util.Date;
 import java.util.StringJoiner;
 
@@ -7,8 +9,10 @@ public class User {
 
     private int id;
 
+    @Size(min = 2,message = "Size of name cannot be less that 2 char")
     private String name;
 
+    @Past
     private Date birthDate;
 
     public User() {
