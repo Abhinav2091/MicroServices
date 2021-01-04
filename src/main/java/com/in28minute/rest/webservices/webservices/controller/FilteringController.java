@@ -1,3 +1,4 @@
+/*
 package com.in28minute.rest.webservices.webservices.controller;
 
 import com.fasterxml.jackson.databind.ser.FilterProvider;
@@ -51,3 +52,4 @@ public class FilteringController {
         return mapping;
     }
 }
+*/

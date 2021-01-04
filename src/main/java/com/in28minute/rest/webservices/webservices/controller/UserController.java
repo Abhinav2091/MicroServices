@@ -1,5 +1,6 @@
 package com.in28minute.rest.webservices.webservices.controller;
 
+import com.in28minute.rest.webservices.webservices.bean.Post;
 import com.in28minute.rest.webservices.webservices.bean.User;
 import com.in28minute.rest.webservices.webservices.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,6 +56,24 @@ public class UserController {
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/id").buildAndExpand(user.getId()).toUri();
         // returning status 201 for created
         return ResponseEntity.created(location).build();
+
+    }
+
+    @GetMapping(value = "/jpa/users")
+    public ResponseEntity<Object> findUsers() {
+        return new ResponseEntity(userService.getUsers(),null,HttpStatus.OK);
+
+    }
+    @GetMapping(value = "/jpa/users/{id}")
+    public ResponseEntity<Object> findUser(@PathVariable("id") int id) {
+        return new ResponseEntity(userService.getUser(id),null,HttpStatus.OK);
+
+    }
+
+    @GetMapping(value = "/jpa/users/{id}/posts")
+    public ResponseEntity<Object> getPost(@PathVariable("id") int id) {
+        List<Post> postList = userService.getPosts(id);
+        return new ResponseEntity(postList,null,HttpStatus.OK);
 
     }
 }
