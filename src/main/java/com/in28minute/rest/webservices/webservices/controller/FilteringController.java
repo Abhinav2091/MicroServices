@@ -1,4 +1,3 @@
-/*
 package com.in28minute.rest.webservices.webservices.controller;
 
 import com.fasterxml.jackson.databind.ser.FilterProvider;
@@ -10,6 +9,7 @@ import org.springframework.http.converter.json.MappingJacksonValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -29,14 +29,14 @@ public class FilteringController {
 
     @GetMapping("/dynamic-filtering")
     public MappingJacksonValue dynamicFiltering() {
-        User user = new User(1, "AJU", new Date());
+        User user = new User(1, "AJU", LocalDate.now());
 
         return getMappingJacksonValue(user);
     }
 
     @GetMapping("/dynamic-filtering-list")
     public MappingJacksonValue dynamicFilteringList() {
-        List<User> userList = Arrays.asList(new User(1, "AJU", new Date()), new User(2, "Abhinav", new Date()));
+        List<User> userList = Arrays.asList(new User(1, "AJU", LocalDate.now()), new User(2, "Abhinav", LocalDate.now()));
 
         return getMappingJacksonValue(userList);
 
@@ -46,10 +46,10 @@ public class FilteringController {
         //do Dynamic filtering
         MappingJacksonValue mapping = new MappingJacksonValue(user);
         //configure the filters
-        SimpleBeanPropertyFilter filter = SimpleBeanPropertyFilter.filterOutAllExcept("name", "id");
+        SimpleBeanPropertyFilter filter = SimpleBeanPropertyFilter.filterOutAllExcept("user_name", "id");
         FilterProvider filters = new SimpleFilterProvider().addFilter("dynamicFilter", filter);
         mapping.setFilters(filters);
         return mapping;
     }
 }
-*/
+

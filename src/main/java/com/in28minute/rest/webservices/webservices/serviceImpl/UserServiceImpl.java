@@ -7,6 +7,7 @@ import com.in28minute.rest.webservices.webservices.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -20,8 +21,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> findAll() {
         List<User> userList = new ArrayList<>();
-        userList.add(new User(1, "Abhinav", new Date()));
-        userList.add(new User(2, "Aju", new Date()));
+        userList.add(new User(1, "Abhinav", LocalDate.now().minusYears(15)));
+        userList.add(new User(2, "Aju", LocalDate.now().minusYears(10)));
+        userList.add(new User(3, "Avi", LocalDate.now().minusYears(23)));
+        userList.add(new User(4, "Manu", LocalDate.now().minusYears(5)));
         return userList;
     }
 

@@ -18,4 +18,11 @@ public class HelloWorld {
     public void setMessage(String message) {
         this.message = message;
     }
+
+    @Override
+    public String toString() {
+        return "HelloWorld{" +
+                "message='" + message + '\'' +
+                '}';
+    }
 }

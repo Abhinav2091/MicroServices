@@ -1,8 +1,8 @@
 package com.in28minute.rest.webservices.webservices.bean;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import net.minidev.json.annotate.JsonIgnore;
 
 //Static Filtering
 
