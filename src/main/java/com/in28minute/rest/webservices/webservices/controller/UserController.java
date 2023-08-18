@@ -6,6 +6,7 @@ import com.in28minute.rest.webservices.webservices.exception.CustomeExceptionFor
 import com.in28minute.rest.webservices.webservices.exception.CustomisedExceptionHandler;
 import com.in28minute.rest.webservices.webservices.exception.ExceptionResponse;
 import com.in28minute.rest.webservices.webservices.service.UserService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
@@ -16,7 +17,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 //import javax.validation.Valid;
 //import javax.websocket.server.PathParam;
-import javax.validation.Valid;
 import java.net.URI;
 import java.nio.file.attribute.UserPrincipalNotFoundException;
 import java.time.LocalDate;

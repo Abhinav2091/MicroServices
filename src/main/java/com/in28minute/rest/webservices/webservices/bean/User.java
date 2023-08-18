@@ -3,15 +3,12 @@ package com.in28minute.rest.webservices.webservices.bean;
 import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
-//import io.swagger.annotations.ApiModel;
-//import io.swagger.annotations.ApiModelProperty;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.validation.constraints.Past;
-import javax.validation.constraints.Size;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.Size;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
@@ -19,7 +16,7 @@ import java.util.StringJoiner;
 
 //@JsonFilter("dynamicFilter")
 //@ApiModel(description = "All description")
-@Entity(name = "user")
+@Entity(name = "user_details")
 public class User {
 
     @Id
@@ -28,7 +25,7 @@ public class User {
 
     @Size(min = 2, message = "Size of name cannot be less that 2 char")
    // @ApiModelProperty(notes = "name should be more than 2 char")
-    @JsonProperty("user_name")
+    //@JsonProperty("user_name")
     private String name;
 
     @Past

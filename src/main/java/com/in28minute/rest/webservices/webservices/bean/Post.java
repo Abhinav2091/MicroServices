@@ -1,10 +1,7 @@
 package com.in28minute.rest.webservices.webservices.bean;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import net.minidev.json.annotate.JsonIgnore;
-
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.StringJoiner;
 
 @Entity(name = "post")
